@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMl-kX-lhE">
+                                <rect key="frame" x="112" y="235" width="150" height="30"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.61568627450000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Send Request">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startDown:" destination="BYZ-38-t0r" eventType="touchUpInside" id="azg-3o-dKb"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Verb" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a52-5p-f0c">
+                                <rect key="frame" x="38" y="102" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.61568627450000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Parameters" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="txS-vc-JKY">
+                                <rect key="frame" x="38" y="168" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.61568627450000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eFD-Ya-Oyj">
+                                <rect key="frame" x="38" y="35" width="300" height="30"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.61568627450000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wNM-UO-P3o">
+                                <rect key="frame" x="17" y="308" width="341" height="31"/>
+                            </slider>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SGX-3j-RQL">
+                                <rect key="frame" x="0.0" y="356" width="375" height="258"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.61568627450000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wNM-UO-P3o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="044-M5-7yq"/>
+                            <constraint firstItem="a52-5p-f0c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7vz-71-ai4"/>
+                            <constraint firstItem="txS-vc-JKY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.55" id="EWs-0I-gMV"/>
+                            <constraint firstItem="txS-vc-JKY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="Fne-Le-jH4"/>
+                            <constraint firstItem="txS-vc-JKY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XFM-Hx-mCQ"/>
+                            <constraint firstItem="a52-5p-f0c" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.35" id="Yrt-im-ZeO"/>
+                            <constraint firstItem="eFD-Ya-Oyj" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.15" id="aLs-PF-DvC"/>
+                            <constraint firstItem="yMl-kX-lhE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.75" id="aki-rx-R6E"/>
+                            <constraint firstItem="eFD-Ya-Oyj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dcq-Cp-nmr"/>
+                            <constraint firstItem="a52-5p-f0c" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="dfW-Gw-8OE"/>
+                            <constraint firstItem="yMl-kX-lhE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e4W-Zd-a4a"/>
+                            <constraint firstItem="wNM-UO-P3o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lG3-BQ-Gvq"/>
+                            <constraint firstItem="yMl-kX-lhE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="le9-Y4-OKg"/>
+                            <constraint firstItem="eFD-Ya-Oyj" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="n6y-BM-8kM"/>
+                            <constraint firstItem="wNM-UO-P3o" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="opr-iy-UCu"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="parametersText" destination="txS-vc-JKY" id="bdC-DK-jF8"/>
+                        <outlet property="responseText" destination="SGX-3j-RQL" id="aL3-jy-VNX"/>
+                        <outlet property="urlText" destination="eFD-Ya-Oyj" id="ZPx-zD-KrV"/>
+                        <outlet property="verbText" destination="a52-5p-f0c" id="syZ-Dn-4RY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="376.5"/>
+        </scene>
+    </scenes>
+</document>
