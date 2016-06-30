@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *imageUrlText;
 @property (weak, nonatomic) IBOutlet UITextView *responseText;
 @property (strong, nonatomic) dispatch_queue_t serialQueue;
-//= dispatch_queue_create("com.blah.queue", DISPATCH_QUEUE_SERIAL);
 
 @property NSString *responseString;
 
@@ -38,11 +37,10 @@
 - (IBAction)sendRequest:(id)sender {
     
     if ( ![_urlText.text  isEqual: @""] && ![_verbText.text  isEqual: @""] && ![_parametersText.text  isEqual: @""]) {
-      
+        
         NSDictionary *params = @{@"firstname": @"John", @"lastname": @"Doe"};
         NSString *verb = _verbText.text;
         NSURL *url = [NSURL URLWithString:_urlText.text];
-//        @"http://jsonplaceholder.typicode.com/posts"
         [self requestWithURL:(NSURL*)url withVerb:(NSString*)verb withParams:(NSDictionary*)params];
         _urlText.text = @"";
         _verbText.text = @"";
@@ -55,11 +53,9 @@
     if ( ![_imageUrlText.text  isEqual: @""]) {
         _activity.hidden = false;
         
-//        dispatch_queue_t serialQueue = dispatch_queue_create("com.blah.queue", DISPATCH_QUEUE_SERIAL);
         dispatch_async(_serialQueue, ^{
             NSString *imageUrl = _imageUrlText.text;
-//            NSString *imageUrl = _imageUrlText.text;
-
+            
             NSData * data = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: imageUrl]];
             
             if ( data == nil )
@@ -69,7 +65,7 @@
                 _image1.image = [UIImage imageWithData: data];
                 _activity.hidden = true;
                 _imageUrlText.text = @"";
-
+                
             });
         });
     }
@@ -83,7 +79,6 @@
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
     request.HTTPBody = jsonData;
     NSURLConnection *connection= [[NSURLConnection alloc] initWithRequest:request delegate:self];
-//    dispatch_queue_t serialQueue = dispatch_queue_create("com.blah.queue", DISPATCH_QUEUE_SERIAL);
     
     dispatch_async(_serialQueue, ^{
         [connection start];
@@ -105,7 +100,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-// The request is complete and data has been received
+    // The request is complete and data has been received
     NSString *stringFromData = [[NSString alloc] initWithData:_responseData encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", stringFromData);
@@ -118,7 +113,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-// There was an error!!
+    // There was an error!!
     NSLog(@"%@", error);
     if (error) {
         _responseText.text = [_responseText.text stringByAppendingString: error.description];
